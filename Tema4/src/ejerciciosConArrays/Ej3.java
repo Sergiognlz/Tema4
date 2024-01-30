@@ -29,14 +29,16 @@ public class Ej3 {
 		}
 		// creo otro bucle para comparar
 		for (int k = 0; k < tabla1.length; k++) {
-			// creamos un if else para comparar
+			// creamos un if else que comparará los valores de ambas tablas
 			if (tabla1[k]==tabla2[k]) {
+				//en caso de ser iguales saltará el mensaje
 				System.out.println("El valor del índice " + (k + 1) + " son iguales");
-
+				// en caso de no ser iguales saltará el mensaje del else
 			} else {
 				System.out.println("El valor del índice " + (k + 1) + " no son iguales");
 			}
 		}
+		//cerramos escaner
 		sc.close();
 	}
 
