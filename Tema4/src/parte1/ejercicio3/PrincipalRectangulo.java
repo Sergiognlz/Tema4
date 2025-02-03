@@ -11,28 +11,51 @@ public class PrincipalRectangulo {
 	 * imprimir coordenadas, perímetros y áreas.
 	 */
 	public static void main(String[] args) {
-		
-		//creamos objeto r1
-		Rectangulo r1=new Rectangulo();
-		//creamos objeto r2
-		Rectangulo r2=new Rectangulo(); 
-		
-		//asignamos los atributos al objeto 1
-		r1.x1=0;
-		r1.y1=0;
-		r1.x2=5;
-		r1.y2=5;
-		//asignamos los atributos al objeto 2
-		r2.x1=7;
-		r2.y1=9;
-		r2.x2=2;
-		r2.y2=3;
-		
-		//mostramos sus coordenadas por pantalla
-		System.out.println(r1.x1+" ,"+r1.y1);
-		
-		
-		
-		
+
+		// creamos objeto r1
+		Rectangulo r1 = new Rectangulo();
+		// creamos objeto r2
+		Rectangulo r2 = new Rectangulo();
+
+		// asignamos los atributos al objeto 1
+		r1.x1 = 0;
+		r1.y1 = 0;
+		r1.x2 = 5;
+		r1.y2 = 5;
+		// asignamos los atributos al objeto 2
+		r2.x1 = 7;
+		r2.y1 = 9;
+		r2.x2 = 2;
+		r2.y2 = 3;
+
+		// mostramos sus coordenadas por pantalla
+		System.out.println("Coordenadas R1: (" + r1.x1 + " ," + r1.y1 + ")(" + r1.x2 + " ," + r1.y2 + ")");
+		// mostramos perimetro y área
+		System.out.println("Perimetro: " + (r1.x1 + r1.y1 + r1.x2 + r1.y2) + " Área: " + (r1.x2 * r1.y2));
+		// mostramos coordenadas r2
+		System.out.println("Coordenadas R2: (" + r2.x1 + " ," + r2.y1 + ")(" + r2.x2 + " ," + r2.y2 + ")");
+		// mostramos perimetro y área
+		System.out.println("Perimetro: " + (r2.x1 + r2.y1 + r2.x2 + r2.y2) + " Área: " + (r2.x2 * r2.y2));
+		System.out.println();
+		// cambiamos los atributos al objeto 1
+		r1.x1 += 1;
+		r1.y1 *= 2;
+		r1.x2 -= 1;
+		r1.y2 += 5;
+		// cambiamos los atributos al objeto 2
+		r2.x1 -= 2;
+		r2.y1 /= 3;
+		r2.x2 *= 2;
+		r2.y2 += 3;
+
+		// mostramos sus coordenadas por pantalla
+		System.out.println("Coordenadas R1: (" + r1.x1 + " ," + r1.y1 + ")(" + r1.x2 + " ," + r1.y2 + ")");
+		// mostramos perimetro y área
+		System.out.println("Perimetro: " + (r1.x1 + r1.y1 + r1.x2 + r1.y2) + " Área: " + (r1.x2 * r1.y2));
+		// mostramos coordenadas r2
+		System.out.println("Coordenadas R2: (" + r2.x1 + " ," + r2.y1 + ")(" + r2.x2 + " ," + r2.y2 + ")");
+		// mostramos perimetro y área
+		System.out.println("Perimetro: " + (r2.x1 + r2.y1 + r2.x2 + r2.y2) + " Área: " + (r2.x2 * r2.y2));
+
 	}
 }
