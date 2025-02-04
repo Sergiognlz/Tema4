@@ -12,22 +12,13 @@ public class PrincipalPunto {
 	 */
 	public static void main(String[] args) {
 		// creamos objeto p1
-		Punto p1 = new Punto();
+		Punto p1 = new Punto(5,0);
 		// creamos objeto p2
-		Punto p2 = new Punto();
+		Punto p2 = new Punto(10,10);
 		// creamos objeto p3
-		Punto p3 = new Punto();
+		Punto p3 = new Punto(-3,7);
 
-		// coordenadas p1
-		p1.x = 5;
-		p2.y = 0;
-		// coordenadas p2
-		p2.x = 10;
-		p2.y = 10;
-		// coordenadas p3
-		p3.x = -3;
-		p3.y = 7;
-
+	
 		// mostramos por pantalla las coordenadas
 		System.out.println(p1.x + " ," + p1.y);
 		System.out.println(p2.x + " ," + p2.y);

@@ -16,13 +16,8 @@ public class PrincipalArticulo {
 		// variable pvp
 		double pvp;
 		// creamos objeto clase artículo
-		Articulo art = new Articulo();
-		// asignamos valor a nombre
-		art.nombre = "Zapatilla";
-		// asignamos valor a precio
-		art.precio = 2.0;
-		// asignamos valor a cuantosQuedan
-		art.cuantosQuedan = 99;
+		Articulo art = new Articulo("Zapatilla",2.0,99);
+
 
 		// inicializamos pvp
 		pvp = art.precio += (art.precio * art.IVA);

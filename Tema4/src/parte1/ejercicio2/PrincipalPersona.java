@@ -13,75 +13,93 @@ public class PrincipalPersona {
 	 */
 
 	public static void main(String[] args) {
-		//objeto escaner
-		Scanner sc=new Scanner(System.in);
-		//variable cadena
-		String cadena;
-		//creamos objeto p1
-		Persona p1=new Persona();
-		//creamos objeto p1
-		Persona p2=new Persona();
+		// variable dni;
+		String dni;
+		// variable nombre
+		String nombre;
+		// variable apellidos
+		String apellidos;
+		// variable edad
+		int edad;
+		// variable donde guardaremnos si es mayor de edad
+		String mayoria;
 
-		//for para recorrer dos veces
-		for(int i=0;i<2;i++) {
-		
-		//pedimos dni al usuario
-		System.out.println("Introduce dni");
-		//guardamos en el atributo correspondiente
-		//cuando sea par
-		 if(i%2==0) {
-			 //guardará en p1
-			 p1.dni=sc.next();
-			 //si es impar
-		 }else {
-			 //p2
-			 p2.dni=sc.next();
-		 }
-		 //lipiamos buffe
-		sc.nextLine();
-		//pedimos nombre al usuario
-		System.out.println("Introduce nombre");
-		//guardamos en el atributo correspondiente
-		 if(i%2==0) {
-			 //guardará en p1
-			 p1.nombre=sc.nextLine();
-			 //si es impar
-		 }else {
-			 //p2
-			 p2.nombre=sc.nextLine();
-		 }
-		
-		//pedimos apellidos al usuario
-		System.out.println("Introduce apellidos");
-		//guardamos en el atributo correspondiente
-		 if(i%2==0) {
-			 //guardará en p1
-			 p1.apellidos=sc.nextLine();
-			 //si es impar
-		 }else {
-			 //p2
-			 p2.apellidos=sc.nextLine();
-		 }
-		
-		//pedimos edad al usuario
-		System.out.println("Introduce edad");
-		//guardamos en el atributo correspondiente
-		 if(i%2==0) {
-			 //guardará en p1
-			 p1.edad=sc.nextInt();
-			 //si es impar
-		 }else {
-			 //p2
-			 p2.edad=sc.nextInt();
-		 }
-		
+		// objeto escaner
+		Scanner sc = new Scanner(System.in);
+		// creamos objeto p1
+		Persona p1 = null;
+		// creamos objeto p1
+		Persona p2 = null;
+
+		// for para recorrer dos veces
+		for (int i = 0; i < 2; i++) {
+			// cuando sea par
+			if (i % 2 == 0) {
+				// pedimos dni al usuario
+				System.out.println("Introduce dni");
+				// guardamos en el atributo correspondiente
+
+				// guardará en p1
+				dni = sc.next();
+				// lipiamos buffe
+				sc.nextLine();
+				// pedimos nombre al usuario
+				System.out.println("Introduce nombre");
+				// guardamos en el atributo correspondiente
+
+				nombre = sc.nextLine();
+
+				// pedimos apellidos al usuario
+				System.out.println("Introduce apellidos");
+				// guardamos en el atributo correspondiente
+				apellidos = sc.nextLine();
+
+				// pedimos edad al usuario
+				System.out.println("Introduce edad");
+				// guardamos en el atributo correspondiente
+				edad = sc.nextInt();
+
+				// constructor objeto persona 1
+				p1 = new Persona(dni, nombre, apellidos, edad);
+				// sino
+			} else {
+				// pedimos dni al usuario
+				System.out.println("Introduce dni");
+				// guardamos en el atributo correspondiente
+
+				// guardará en p1
+				dni = sc.next();
+				// lipiamos buffe
+				sc.nextLine();
+				// pedimos nombre al usuario
+				System.out.println("Introduce nombre");
+				// guardamos en el atributo correspondiente
+
+				nombre = sc.nextLine();
+
+				// pedimos apellidos al usuario
+				System.out.println("Introduce apellidos");
+				// guardamos en el atributo correspondiente
+				apellidos = sc.nextLine();
+
+				// pedimos edad al usuario
+				System.out.println("Introduce edad");
+				// guardamos en el atributo correspondiente
+				edad = sc.nextInt();
+
+				// constructor objeto persona 2
+				p2 = new Persona(dni, nombre, apellidos, edad);
+			}
+
 		}
-		//mostramos por pantalla el objeto persona 1
-		System.out.println(p1.nombre+" "+p1.apellidos+" con dni "+p1.dni+(cadena=p1.edad<18?" no es mayor de edad":" es mayor de edad"));
-		
-		//mostramos por pantalla el objeto persona 2
-				System.out.println(p2.nombre+" "+p2.apellidos+" con dni "+p2.dni+(cadena=p2.edad<18?" no es mayor de edad":" es mayor de edad"));
-		//cerramos escaner
-				sc.close();
+		// mostramos por pantalla el objeto persona 1
+		System.out.println(p1.nombre + " " + p1.apellidos + " con dni " + p1.dni
+				+ (mayoria = p1.edad < 18 ? " no es mayor de edad" : " es mayor de edad"));
+
+		// mostramos por pantalla el objeto persona 2
+		System.out.println(p2.nombre + " " + p2.apellidos + " con dni " + p2.dni
+				+ (mayoria = p2.edad < 18 ? " no es mayor de edad" : " es mayor de edad"));
+		// cerramos escaner
+		sc.close();
 	}
 }
