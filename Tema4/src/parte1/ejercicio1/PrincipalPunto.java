@@ -12,37 +12,33 @@ public class PrincipalPunto {
 	 */
 	public static void main(String[] args) {
 		// creamos objeto p1
-		Punto p1 = new Punto(5,0);
+		Punto p1 = new Punto(5, 0);
 		// creamos objeto p2
-		Punto p2 = new Punto(10,10);
+		Punto p2 = new Punto(10, 10);
 		// creamos objeto p3
-		Punto p3 = new Punto(-3,7);
+		Punto p3 = new Punto(-3, 7);
 
-	
 		// mostramos por pantalla las coordenadas
-		System.out.println(p1.x + " ," + p1.y);
-		System.out.println(p2.x + " ," + p2.y);
-		System.out.println(p3.x + " ," + p3.y);
-		
-		
-		// modificamos coordenadas p1
-		p1.x += 3;
-		p2.y -= 1;
-		// modificamos coordenadas p2
-		p2.x *= 10;
-		p2.y /= 10;
-		// modificamos coordenadas p3
-		p3.x %= 3;
-		p3.y = 107;
+		System.out.println(p1.getX() + " ," + p1.getY());
+		System.out.println(p2.getX() + " ," + p2.getY());
+		System.out.println(p3.getX() + " ," + p3.getY());
 
-		
+		// modificamos coordenadas p1
+		p1.setX(p1.getX() + 3);
+		p2.setY(p1.getY() - 1);
+		// modificamos coordenadas p2
+		p2.setX(p2.getX() * 10);
+		p2.setY(p2.getX() / 10);
+		// modificamos coordenadas p3
+		p3.setX(p3.getX() % 3);
+		p3.setY(107);
+
 		System.out.println();
-		
 
 		// mostramos por pantalla las coordenadas nuevamente
-		System.out.println(p1.x + " ," + p1.y);
-		System.out.println(p2.x + " ," + p2.y);
-		System.out.println(p3.x + " ," + p3.y);
+		System.out.println(p1.getX() + " ," + p1.getY());
+		System.out.println(p2.getX() + " ," + p2.getY());
+		System.out.println(p3.getX() + " ," + p3.getY());
 
 	}
 }

@@ -7,19 +7,19 @@ public class Persona {
 	/**
 	 * variable dni
 	 */
-	String dni;
+	private String dni;
 	/**
 	 * variable nombre
 	 */
-	String nombre;
+	private String nombre;
 	/**
 	 * variable apellidos
 	 */
-	String apellidos;
+	private String apellidos;
 	/**
 	 * variable edad
 	 */
-	int edad;
+	private int edad;
 
 	/**
 	 * constructor persona
@@ -29,7 +29,7 @@ public class Persona {
 	 * @param apellidos
 	 * @param edad
 	 */
-	Persona(String dni, String nombre, String apellidos, int edad) {
+	public Persona(String dni, String nombre, String apellidos, int edad) {
 		// comprobamos que no sea null, no esté vacío o compuesto por caracteres en
 		// blanco
 		if (dni != null && !dni.isBlank()) {
@@ -50,5 +50,65 @@ public class Persona {
 			this.edad = edad;
 		}
 	}
+/**
+ * 
+ * @return dni persona. 
+ */
+	public String getDni() {
+
+		return dni;
+	}
+
+
+/**
+ * 
+ * @return nombre persona
+ */
+	public String getNombre() {
+		return nombre;
+	}
+/**
+ * modifica nombre persona
+ * @param nombre de la persona. No puede ser null, vacío y blanco
+ */
+	public void setNombre(String nombre) {
+		if(nombre!=null&&!nombre.isBlank()) {
+		this.nombre = nombre;
+		}
+	}
+/**
+ * 
+ * @return apellidos de la persona
+ */
+	public String getApellidos() {
+		return apellidos;
+	}
+/**
+ * modifica apellidos persona
+ * @param apellidos persona. No puede ser null, vacío y blanco
+ */
+	public void setApellidos(String apellidos) {
+		if(nombre!=null&&!nombre.isBlank()) {
+		this.apellidos = apellidos;
+		}
+	}
+/**
+ * 
+ * @return edad persona
+ */
+	public int getEdad() {
+		return edad;
+	}
+/**
+ * modifica edad persona
+ * @param edad. No puede ser  menor que 0
+ */
+	public void setEdad(int edad) {
+		if(edad>0) {
+		this.edad = edad;
+		}
+	}
+	
+	
 
 }

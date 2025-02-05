@@ -7,21 +7,21 @@ public class Articulo {
 	/**
 	 * atributo nombre
 	 */
-	String nombre;
+	private String nombre;
 
 	/**
 	 * atributo precio sin iva
 	 */
-	double precio;
+	private double precio;
 	/**
 	 * atributo iva
 	 */
-	final double IVA=0.21;
+	public static final double IVA=0.21;
 	
 	/**
 	 * atributo cuantos quedan en el almacén
 	 */
-	int cuantosQuedan;
+	private int cuantosQuedan;
 	
 	/**
 	 * constructor Artículo
@@ -44,4 +44,53 @@ public class Articulo {
 			this.cuantosQuedan=cuantosQuedan;
 		}
 	}
+/**
+ * 
+ * @return nombre artículo
+ */
+	public String getNombre() {
+		return nombre;
+	}
+/**
+ * modifica nombre artículo
+ * @param nombre artículo. NO puede ser null, vacío o blanco
+ */
+	public void setNombre(String nombre) {
+		if(nombre!=null&&!nombre.isBlank()) {
+		this.nombre = nombre;
+		}
+	}
+/**
+ * 
+ * @return  precio artículo
+ */
+	public double getPrecio() {
+		return precio;
+	}
+/**
+ * modifica precio artículo
+ * @param precio artículo. No puede ser menor o igual que 0
+ */
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+/**
+ * 
+ * @return cuantos artículos quedan
+ */
+	public int getCuantosQuedan() {
+		return cuantosQuedan;
+	}
+/**
+ * modifica cuantos archivos quedan
+ * @param cuantosQuedan. No puede ser menor que 0
+ */
+	public void setCuantosQuedan(int cuantosQuedan) {
+		if(cuantosQuedan>=0) {
+		this.cuantosQuedan = cuantosQuedan;
+		}
+	}
+	
+	
+	
 }

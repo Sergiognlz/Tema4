@@ -93,12 +93,12 @@ public class PrincipalPersona {
 
 		}
 		// mostramos por pantalla el objeto persona 1
-		System.out.println(p1.nombre + " " + p1.apellidos + " con dni " + p1.dni
-				+ (mayoria = p1.edad < 18 ? " no es mayor de edad" : " es mayor de edad"));
+		System.out.println(p1.getNombre() + " " + p1.getApellidos() + " con dni " + p1.getDni()
+				+ (mayoria = p1.getEdad() < 18 ? " no es mayor de edad" : " es mayor de edad"));
 
 		// mostramos por pantalla el objeto persona 2
-		System.out.println(p2.nombre + " " + p2.apellidos + " con dni " + p2.dni
-				+ (mayoria = p2.edad < 18 ? " no es mayor de edad" : " es mayor de edad"));
+		System.out.println(p2.getNombre() + " " + p2.getApellidos() + " con dni " + p2.getDni()
+				+ (mayoria = p2.getEdad() < 18 ? " no es mayor de edad" : " es mayor de edad"));
 		// cerramos escaner
 		sc.close();
 	}

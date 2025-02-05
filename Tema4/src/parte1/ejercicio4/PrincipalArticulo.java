@@ -20,15 +20,17 @@ public class PrincipalArticulo {
 
 
 		// inicializamos pvp
-		pvp = art.precio += (art.precio * art.IVA);
+		pvp = (art.getPrecio() + (art.getPrecio() * Articulo.IVA));
+		
+		
 		// mostramos por pantalla los valores del objeto
-		System.out.println(art.nombre + " - Precio: " + art.precio + "€ - IVA:21% - PVP: " + pvp + "€ ");
+		System.out.println(art.getNombre() + " - Precio: " + art.getPrecio() + "€ - IVA:21% - PVP: " + pvp + "€ ");
 
 		//cambiamos precio
-		art.precio = 10.0;
+		art.setPrecio ( 10.0);
 		// inicializamos pvp
-		pvp = art.precio += (art.precio * art.IVA);
+		pvp = (art.getPrecio() + (art.getPrecio() * Articulo.IVA));
 		// mostramos por pantalla los valores del objeto
-		System.out.println(art.nombre + " - Precio: " + art.precio + "€ - IVA:21% - PVP: " + pvp + "€ ");
+		System.out.println(art.getNombre() + " - Precio: " + art.getPrecio() + "€ - IVA:21% - PVP: " + pvp + "€ ");
 	}
 }
