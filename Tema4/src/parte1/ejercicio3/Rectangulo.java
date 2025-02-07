@@ -106,6 +106,70 @@ public class Rectangulo {
 		this.y2 = y2;
 		}
 	}
+	/**
+	 * Modifica al mismo tiempo coordenadas x1 e y1
+	 * @param coordenada x1
+	 * @param coordenada y1
+	 */
+	public void setX1Y1(int x1, int y1) {
+		
+		this.x1=x1;
+		this.y1=y1;
+	}
 	
+	/**
+	 * Modifica al mismo tiempo coordenadas x2 e y2
+	 * @param coordenada x2
+	 * @param coordenada y2
+	 */
+	public void setX2Y2(int x2, int y2) {
+		
+		this.x2=x2;
+		this.y2=y2;
+	}
+	/**
+	 * Modifica todas las corrdenadas
+	 * @param coordenada x1
+	 * @param coordenada y1
+	 * @param coordenada x2
+	 * @param coordenada y2
+	 */
+	public void setAll(int x1, int y1, int x2, int y2) {
+		this.x1=x1;
+		this.y1=y1;
+		this.x2=x2;
+		this.y2=y2;
+	}
+	/**
+	 * Calcula el perímetro
+	 * @return perímetro
+	 */
+	public double getPerimetro() {
+		double perimetro=(this.x1+this.y1+this.x2+this.y2);
+		
+		return perimetro;
+	}
+	/**
+	 * Calcula el área del rectángulo
+	 * @return area
+	 */
+	public double getArea() {
+		double area=(this.x1-this.x2)*(this.y1-this.y2);
+		
+		return area;
+	}
+	/**
+	 * Devuelve cadena con todos los valores de los atributos además del perímetro y el área
+	 */
+	public String toString() {
+		String cadena="Coordenada x1: "+this.x1+"\n";
+		cadena+="Coordenada y1: "+this.y1+"\n";
+		cadena+="Coordenada x2: "+this.x2+"\n";
+		cadena+="Coordenada y2: "+this.y2+"\n";
+		cadena+="Perímetro: "+getPerimetro()+"\n";
+		cadena+="Área: "+getArea()+"\n";
+		
+		return cadena;
+	}
 	
 }

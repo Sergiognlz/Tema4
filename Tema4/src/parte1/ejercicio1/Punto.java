@@ -92,4 +92,15 @@ public class Punto {
 
 		return distanciaXY;
 	}
+	
+	/**
+	 * función que devuelve una cadena con las coordenadas
+	 */
+	public String toString() {
+		String coordenada;
+		
+		coordenada="(Coordenadas: "+this.x+","+this.y+")";
+		
+		return coordenada;
+	}
 }

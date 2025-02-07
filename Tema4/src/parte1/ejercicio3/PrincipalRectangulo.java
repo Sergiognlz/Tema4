@@ -18,42 +18,52 @@ public class PrincipalRectangulo {
 		Rectangulo r2 = new Rectangulo(7, 9, 2, 3);
 
 		// mostramos sus coordenadas por pantalla
-		System.out.println(
+		/**System.out.println(
 				"Coordenadas R1: (" + r1.getX1() + " ," + r1.getY1() + ")(" + r1.getX2() + " ," + r1.getY2() + ")");
 		// mostramos perimetro y área
 		System.out.println("Perimetro: " + (r1.getX1() + r1.getY1() + r1.getX2() + r1.getY2()) + " Área: "
-				+ (r1.getX2() * r1.getY2()));
+				+ (r1.getX1() - r1.getX2()) * (r1.getY1() - r1.getY2()));
 		// mostramos coordenadas r2
 		System.out.println(
 				"Coordenadas R2: (" + r2.getX1() + " ," + r2.getY1() + ")(" + r2.getX2() + " ," + r2.getY2() + ")");
 		// mostramos perimetro y área
 		System.out.println("Perimetro: " + (r2.getX1() + r2.getY1() + r2.getX2() + r2.getY2()) + " Área: "
-				+ (r2.getX2() * r2.getY2()));
+				+ (r2.getX1() - r2.getX2()) * (r2.getY1() - r2.getY2()));*/
+		
+		
+		
+		r1.setX1Y1(3, 4);
+		r1.setX2Y2(23, 13);
+		r1.setAll(1, 2, 5, 4);
 
 		System.out.println();
-		// cambiamos los atributos al objeto 1
+		/*
 		r1.setX1(r1.getX1() + 1);
 		r1.setY1(r1.getY1() * 2);
 		r1.setX2(r1.getX2() - 1);
 		r1.setY2(r1.getY2() + 5);
-		// cambiamos los atributos al objeto 2
+	
 		r2.setX1(r2.getX1() - 2);
 		r2.setY1(r2.getY1() / 3);
 		r2.setX2(r2.getX2() * 2);
 		r2.setY2(r2.getY2() + 3);
-
+			*/
+		
 		// mostramos sus coordenadas por pantalla
-		System.out.println(
+		System.out.println(r1);
+		
+		
+		/*System.out.println(
 				"Coordenadas R1: (" + r1.getX1() + " ," + r1.getY1() + ")(" + r1.getX2() + " ," + r1.getY2() + ")");
 		// mostramos perimetro y área
 		System.out.println("Perimetro: " + (r1.getX1() + r1.getY1() + r1.getX2() + r1.getY2()) + " Área: "
-				+ (r1.getX2() * r1.getY2()));
+				+ (r1.getX1() - r1.getX2()) * (r1.getY1() - r1.getY2()));
 		// mostramos coordenadas r2
 		System.out.println(
 				"Coordenadas R2: (" + r2.getX1() + " ," + r2.getY1() + ")(" + r2.getX2() + " ," + r2.getY2() + ")");
 		// mostramos perimetro y área
 		System.out.println("Perimetro: " + (r2.getX1() + r2.getY1() + r2.getX2() + r2.getY2()) + " Área: "
-				+ (r2.getX2() * r2.getY2()));
+				+ (r2.getX1() - r2.getX2()) * (r2.getY1() - r2.getY2()));*/
 
 	}
 }

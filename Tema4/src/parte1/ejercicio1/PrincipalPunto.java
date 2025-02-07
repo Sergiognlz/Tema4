@@ -39,6 +39,12 @@ public class PrincipalPunto {
 		System.out.println(p1.getX() + " ," + p1.getY());
 		System.out.println(p2.getX() + " ," + p2.getY());
 		System.out.println(p3.getX() + " ," + p3.getY());
-
+		
+		System.out.println();
+		System.out.println("Distancia entre punto 1 y punto 2: "+p1.distancia(p2));
+		p1.desplaza(1, 2);
+		p2.desplaza(-2, -1);
+		System.out.println();
+		System.out.println(p1);
 	}
 }

@@ -90,7 +90,27 @@ public class Articulo {
 		this.cuantosQuedan = cuantosQuedan;
 		}
 	}
-	
-	
-	
+	/**
+	 * calculamos el precio final de un artículo añadiendo el iva
+	 * @return precioFinal
+	 */
+	public double getPVP() {
+		double precioFinal=this.precio;
+		
+		precioFinal+=this.precio*IVA;
+		
+		return precioFinal;
+	}
+	/**
+	 * Calculamos un descuento en base a un porcentaje que le pasamos por argumento
+	 * @param descuento porcentaje que le pasamos
+	 * @return precio final con el descuento
+	 */
+	public double getPVPDescuento(int descuento) {
+		double precioDescuento=this.precio;
+		
+		precioDescuento-=this.precio*((double)descuento/10);
+		
+		return precioDescuento;
+	}
 }

@@ -90,16 +90,42 @@ public class PrincipalPersona {
 				// constructor objeto persona 2
 				p2 = new Persona(dni, nombre, apellidos, edad);
 			}
-
 		}
-		// mostramos por pantalla el objeto persona 1
-		System.out.println(p1.getNombre() + " " + p1.getApellidos() + " con dni " + p1.getDni()
-				+ (mayoria = p1.getEdad() < 18 ? " no es mayor de edad" : " es mayor de edad"));
+			System.out.println();
+			// llamamos a la función y con un if si es mayor de edad
+			if (p1.esMayorEdad()) {
 
-		// mostramos por pantalla el objeto persona 2
-		System.out.println(p2.getNombre() + " " + p2.getApellidos() + " con dni " + p2.getDni()
-				+ (mayoria = p2.getEdad() < 18 ? " no es mayor de edad" : " es mayor de edad"));
+				System.out.println("Es mayor de edad");
+			} else {
+				System.out.println("Es menor de edad");
+			}
+			System.out.println();
+
+			// llamamos a la función y con un if si es mayor de edad
+			if (p1.esJubilado()) {
+
+				System.out.println("Es jubilado");
+			} else {
+				System.out.println("No es jubilado");
+			}
+			System.out.println();
+			//llamamos al método toString(no hace falta poner toString) y al método diferenciaEdad
+			System.out.println("Diferencia de edad entre \n"+p1+" y \n"+p2+"es igual a  "+p1.diferenciaEdad(p2)+" años");
+			
+		
+		/*
+		 * // mostramos por pantalla el objeto persona 1
+		 * System.out.println(p1.getNombre() + " " + p1.getApellidos() + " con dni " +
+		 * p1.getDni() + (mayoria = p1.getEdad() < 18 ? " no es mayor de edad" :
+		 * " es mayor de edad"));
+		 * 
+		 * // mostramos por pantalla el objeto persona 2
+		 * System.out.println(p2.getNombre() + " " + p2.getApellidos() + " con dni " +
+		 * p2.getDni() + (mayoria = p2.getEdad() < 18 ? " no es mayor de edad" :
+		 * " es mayor de edad"));
+		 */
 		// cerramos escaner
 		sc.close();
+
 	}
 }
