@@ -155,7 +155,7 @@ public class Articulo {
 	public boolean almacenar(int cantidad) {
 		boolean vendido = false;
 
-		if (cantidad < 0) {
+		if (cantidad > 0) {
 
 			this.cuantosQuedan += cantidad;
 			vendido = true;
@@ -168,11 +168,13 @@ public class Articulo {
 	 * Método toString
 	 * @return cadena con los datos
 	 */
-	public String toSting() {
+	public String toString() {
 		String cadena="";
+		double pvp=(this.precio + (this.precio * Articulo.IVA));;
 		cadena+="Artículo: "+this.nombre+"\n";
-		cadena+="Precio: "+this.precio+" €\n";
+		cadena+="Precio sin IVA: "+this.precio+" €\n";
 		cadena+="IVA: 21% \n";
+		cadena+="PVP: "+pvp+" € \n";		
 		cadena+="Stock: "+this.cuantosQuedan+"\n";
 		return cadena;
 	}
