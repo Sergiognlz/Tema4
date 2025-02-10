@@ -15,6 +15,8 @@ public class PrincipalArticulo {
 	public static void main(String[] args) {
 		// variable pvp
 		double pvp;
+		//variable cantidad
+		int cantidad;
 		// creamos objeto clase artículo
 		Articulo art = new Articulo("Zapatilla",2.0,99);
 
@@ -24,13 +26,23 @@ public class PrincipalArticulo {
 		
 		
 		// mostramos por pantalla los valores del objeto
-		System.out.println(art.getNombre() + " - Precio: " + art.getPrecio() + "€ - IVA:21% - PVP: " + pvp + "€ ");
-
+		System.out.println(art);
+		//System.out.println(art.getNombre() + " - Precio: " + art.getPrecio() + "€ - IVA:21% - PVP: " + pvp + "€ ");
+		
+		//declaramos cantidad que vamos a vender
+		cantidad=3;
+		//llamamamos al método vender
+		art.vender(cantidad);
+		//cambiamos la cantidad que vamos a almacenar
+		cantidad=2;
+		//llamamos al método almacenar
+		art.almacenar(cantidad);
 		//cambiamos precio
 		art.setPrecio ( 10.0);
 		// inicializamos pvp
 		pvp = (art.getPrecio() + (art.getPrecio() * Articulo.IVA));
 		// mostramos por pantalla los valores del objeto
-		System.out.println(art.getNombre() + " - Precio: " + art.getPrecio() + "€ - IVA:21% - PVP: " + pvp + "€ ");
+		//System.out.println(art.getNombre() + " - Precio: " + art.getPrecio() + "€ - IVA:21% - PVP: " + pvp + "€ ");
+		System.out.println(art);
 	}
 }
