@@ -14,7 +14,7 @@ public class CuentaCorriente {
 	private String DNI;
 
 	// atributo nombre completo del titular
-	private String nombre;
+	private String nombre="";
 
 	// atributo saldo de la cuenta
 	private double saldo;
@@ -228,7 +228,7 @@ public class CuentaCorriente {
 			iguales = true;
 		}
 
-		return super.equals(obj);
+		return iguales;
 	}
 
 }
