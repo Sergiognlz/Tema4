@@ -54,14 +54,16 @@ public class Libro {
 			this.prestados = prestados;
 		}
 	}
-/**
- * Constructor libro
- * @param titulo libro
- * @param autor libro
- * @param ejemplares de libros existentes
- * @param  libros prestados 
- * @param genero literario al que pertenece
- */
+
+	/**
+	 * Constructor libro
+	 * 
+	 * @param titulo     libro
+	 * @param autor      libro
+	 * @param ejemplares de libros existentes
+	 * @param libros     prestados
+	 * @param genero     literario al que pertenece
+	 */
 	public Libro(String titulo, String autor, int ejemplares, int prestados, String genero) {
 		if (titulo != null && !titulo.isBlank()) {
 			this.titulo = titulo;
@@ -89,52 +91,58 @@ public class Libro {
 		case "POETICO" -> {
 			this.genero = Genero.POETICO;
 		}
-		
+
 		}
 	}
+
 	/**
 	 * get titulo
+	 * 
 	 * @return titulo del libro
 	 */
 	public String getTitulo() {
 		return titulo;
 	}
+
 	/**
 	 * get autor
+	 * 
 	 * @return autor del libro
 	 */
 	public String getAutor() {
 		return autor;
 	}
-	
-/**
- * Get ejemplares 
- * @returne jemplares del libro en existencia
- */
+
+	/**
+	 * Get ejemplares
+	 * 
+	 * @returne jemplares del libro en existencia
+	 */
 	public int getEjemplares() {
 		return ejemplares;
 	}
 
-	
 	/**
 	 * get prestados
+	 * 
 	 * @return cantidad de libros prestados
 	 */
 	public int getPrestados() {
 		return prestados;
 	}
-	
+
 	/**
 	 * Get género
+	 * 
 	 * @return género literario al que pertenece el libro. Narrativo por defecto
 	 */
 	public Genero getGenero() {
 		return genero;
 	}
-	
-	
+
 	/**
 	 * Set ejemplares. Modifica el atriburo ejemplares
+	 * 
 	 * @param ejemplares a mofidicar
 	 */
 	public void setEjemplares(int ejemplares) {
@@ -142,9 +150,10 @@ public class Libro {
 			this.ejemplares = ejemplares;
 		}
 	}
-	
+
 	/**
 	 * Modifica el atributo prestados
+	 * 
 	 * @param libros prestados a modificar
 	 */
 	public void setPrestados(int prestados) {
@@ -152,7 +161,69 @@ public class Libro {
 			this.prestados = prestados;
 		}
 	}
-	
-	
-	
+
+	/**
+	 * Método que pasa una cantidad de ejemplares para el préstamo y lo suma al
+	 * número de ejemplares prestados. No se pueden prestar más que el número de
+	 * ejemplares existentes.
+	 * 
+	 * @param cantidad de ejemplares que se van a prestar
+	 * @return Devuelve true si ha podido realizar el prestamo y false si no
+	 */
+	public boolean prestaLibro(int cantidad) {
+		boolean prestamo = false;
+
+		if (this.prestados + cantidad <=this.ejemplares) {
+			this.prestados += cantidad;
+			prestamo = true;
+		}
+
+		return prestamo;
+	}
+
+	/**
+	 * Método que pasa una cantidad de ejemplares para la devoluciób y lo resta al
+	 * número de ejemplares prestados. No se pueden devolver más que el número de
+	 * ejemplares prestados.
+	 * 
+	 * @param cantidad de ejemplares que se van a devolver
+	 * @return Devuelve true si ha podido realizar la devolución y false si no
+	 */
+	public boolean devuelveLibro(int cantidad) {
+		boolean devolucion = false;
+
+		if (this.prestados - cantidad >=0) {
+			this.prestados -= cantidad;
+			devolucion = true;
+		}
+
+		return devolucion;
+	}
+
+	/**
+	 * @Override de método toString que devuelve los datos del libro
+	 */
+
+	public String toString() {
+		String cadena = "";
+		cadena += "Título: " + this.titulo + "\n";
+		cadena += "Autor: " + this.autor + "\n";
+		cadena += "Nº Ejemplares: " + this.ejemplares + "\n";
+		cadena += "Nº Prestados: " + this.prestados + "\n";
+		cadena += "Genero: " + this.genero + "\n";
+		return cadena;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean igual = false;
+
+		Libro l1 = (Libro) obj;
+
+		if (this.titulo.equalsIgnoreCase(l1.titulo) && this.autor.equals(l1.autor)) {
+			igual = true;
+		}
+
+		return igual;
+	}
 }
