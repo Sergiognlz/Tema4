@@ -20,7 +20,7 @@ public class CuentaCorriente {
 	private double saldo;
 
 	// atributo nacionalidad
-	private Nacionalidad nacion;
+	private Nacionalidad nacion = Nacionalidad.ESPAÑOLA;
 
 	/**
 	 * Constructor que recoje los siguientes atributos de la cuenta corriente:
@@ -215,4 +215,20 @@ public class CuentaCorriente {
 		cadena += "Nacionalidad :" + this.nacion + "\n";
 		return cadena;
 	}
+
+	/**
+	 * método equals. Dos cuentas serán iguales cuando coincidan en dni y nombre
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		boolean iguales = false;
+		CuentaCorriente cc2 = (CuentaCorriente) obj;
+
+		if (this.DNI.equals(cc2.DNI) && this.nombre.equals(cc2.nombre)) {
+			iguales = true;
+		}
+
+		return super.equals(obj);
+	}
+
 }
