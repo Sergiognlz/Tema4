@@ -28,6 +28,8 @@ public class PrincipalLibro {
 		int opcion;
 		// creamos objeto libro 1
 		Libro libro1;
+		//creamos objeto libro 2
+		Libro libro2=new Libro("El Señor de los Anillos","J.R.L. Tolkien",10,0);
 		// objeto escaner
 		Scanner sc = new Scanner(System.in);
 
@@ -122,6 +124,11 @@ public class PrincipalLibro {
 
 		}
 
+		if(libro1.equals(libro2)) {
+			System.out.println("Los libros son iguales");
+		}else {
+			System.out.println("Los libros no son iguales");
+		}
 		// cerramos escaner
 		sc.close();
 
