@@ -64,8 +64,9 @@ public Alumno buscaAlumno(String nombre) {
 /**
  * función que elimina el objeto alumno de la lista alumnos
  * @param objeto alumno que queremos borrar
+ * return true si se ha eliminado y false si no
  */
-	public void eliminaAlumno(Alumno objeto) {
-		alumnos.remove(objeto);
+	public boolean eliminaAlumno(Alumno objeto) {
+		return alumnos.remove(objeto);
 	}
 }

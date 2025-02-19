@@ -40,7 +40,11 @@ public class PrincipalAlumno {
 				//llamamos a la función creaAlumno
 				alumno=creaAlumno();
 				//llamamos a la función añadeAlumno
-				Ac.añadirAlumno(alumno);
+				if(Ac.añadirAlumno(alumno)) {
+					System.out.println("El alumno se añadió correctamente");
+				}else {
+					System.err.println("No se pudo añadir el alumno");
+				}
 				
 			}
 			//caso 3 moficar alumno
@@ -61,7 +65,11 @@ public class PrincipalAlumno {
 				//llamamos a la función buscaAlumno con el nombre que le pasamos y lo guardamos en el objeto alumno
 				alumno=Ac.buscaAlumno(nombre);
 				//llamamos a la función eliminaAlumno y le pasamos el alumno que deseamos eliminar
-				Ac.eliminaAlumno(alumno);
+				if(Ac.eliminaAlumno(alumno)) {
+					System.out.println("El alumno se ha eliminado con éxito");
+				}else {
+					System.err.println("El alumno no se pudo eliminar");
+				}
 				
 			}
 			//caso 5 salir del programa
@@ -89,6 +97,7 @@ public class PrincipalAlumno {
 	 */
 	public static void mostrarMenu() {
 		//menú
+		System.out.println();
 		System.out.println("Menú");
 		System.out.println();
 		System.out.println("1. Listado");
