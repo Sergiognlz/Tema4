@@ -19,7 +19,7 @@ public class Alumno {
 	 * @param nombre del alumno
 	 * @param media del alumno
 	 */
-	public Alumno(String nombre, int media) {
+	public Alumno(String nombre, double media) {
 		if(nombre!=null&&!nombre.isBlank()) {
 			this.nombre=nombre;
 		}
