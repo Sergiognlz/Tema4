@@ -60,5 +60,12 @@ public Alumno buscaAlumno(String nombre) {
 	//devolvemos objeto auxiliar
 	return objetoAux;
 }
-	
+
+/**
+ * función que elimina el objeto alumno de la lista alumnos
+ * @param objeto alumno que queremos borrar
+ */
+	public void eliminaAlumno(Alumno objeto) {
+		alumnos.remove(objeto);
+	}
 }

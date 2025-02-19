@@ -11,6 +11,8 @@ public class PrincipalAlumno {
 		int opcion;
 		//creamos variable nombre
 		String nombre;
+		//creamos variable media
+		double media;
 		//creamos objeto alumno
 		Alumno alumno;
 		//creamos lista
@@ -43,17 +45,44 @@ public class PrincipalAlumno {
 			}
 			//caso 3 moficar alumno
 			case 3->{
-				//llamamos a la función pedir nombre
+				//llamamos a la función pedir nombre y la guardamos en la variable nombre
 				nombre=pedirNombre();
+				//llamamos a la función buscaAlumno con el nombre que le pasamos y lo guardamos en el objeto alumno
+				alumno=Ac.buscaAlumno(nombre);
+				//llamamos a la función pedirMedia y la guardamos en la variable media
+				media=pedirMedia();
+				//invocamos el setMedia para modificar el atributo media del objeto alumno
+				alumno.setMedia(media);
+			}
+			//caso 4 borrar alumno
+			case 4->{
+				//llamamos a la función pedir nombre y la guardamos en la variable nombre
+				nombre=pedirNombre();
+				//llamamos a la función buscaAlumno con el nombre que le pasamos y lo guardamos en el objeto alumno
+				alumno=Ac.buscaAlumno(nombre);
+				//llamamos a la función eliminaAlumno y le pasamos el alumno que deseamos eliminar
+				Ac.eliminaAlumno(alumno);
+				
+			}
+			//caso 5 salir del programa
+			case 5->{
+				//mensaje de salida
+				System.out.println("Saliendo del programa");
+			}
+			//default
+			default->{
+				//mensaje de error
+				System.out.println("La opción elegida no existe");
+			}
 			}
 			
-			}
-			
-			
+			//repetirá el proceso mientras no elijamos la opción 5
 		}while(opcion!=5);
-		
-		
-		
+		System.out.println();
+		//mensaje de fin de programa
+		System.out.println("FIN");
+		//cerramos escaner
+		sc.close();
 	}
 	/**
 	 * función que muestra un menú
@@ -78,14 +107,10 @@ public static Alumno creaAlumno() {
 	String nombre;
 	//variable media
 	double media;
-	//pedimos nombre
-	System.out.println("Introduce el nombre del alumno");
-	//guardamos nombre
-	nombre=sc.nextLine();
-	//pedimos media
-	System.out.println("Introduce la nota media del alumno");
-	//guardamos media
-	media=sc.nextDouble();
+//llamamos a la función pedirNombre y lo guardamos en una cadena
+	nombre=pedirNombre();
+	//llamamos a la función pedirMedia y lo guardamos en un double
+	media=pedirMedia();
 	//limpiamos buffer
 	sc.nextLine();
 	
@@ -112,6 +137,17 @@ public static String pedirNombre() {
 	//devolvemos nombre 
 	return nombre;
 }
-
+public static double pedirMedia() {
+	//creamos variable nombre
+	double media;
+	
+	//pedimos nombre
+	System.out.println("Introduce la media del alumno");
+	//guardamos 
+	media=sc.nextDouble();
+	
+	//devolvemos nombre 
+	return media;
+}
 
 }
