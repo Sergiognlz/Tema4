@@ -60,7 +60,7 @@ public class PrincipalArticulo {
 					System.out.println("El artículo se ha dado de alta con éxito");
 				} else {
 					// mensaje error
-					System.err.println("El artículo no se pudo eliminar");
+					System.err.println("El artículo no se pudo dar de alta");
 				}
 
 			}
@@ -181,7 +181,7 @@ public class PrincipalArticulo {
 			}
 
 			// repetirá el proceso mientras no elijamos la opción 5
-		} while (opcion != 5);
+		} while (opcion != 'g');
 		System.out.println();
 		// mensaje de fin de programa
 		System.out.println("FIN");

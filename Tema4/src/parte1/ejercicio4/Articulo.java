@@ -149,6 +149,7 @@ public class Articulo {
 
 	/**
 	 * Actualiza la cantidad de Stock con una cantidad positiva
+	 * 
 	 * @param cantidad que se actualiza
 	 * @return true si consigue actualizarlo
 	 */
@@ -163,20 +164,34 @@ public class Articulo {
 
 		return vendido;
 	}
-	
+
 	/**
 	 * Método toString
+	 * 
 	 * @return cadena con los datos
 	 */
 	public String toString() {
-		String cadena="";
-		double pvp=(this.precio + (this.precio * Articulo.IVA));;
-		cadena+="Artículo: "+this.nombre+"\n";
-		cadena+="Precio sin IVA: "+this.precio+" €\n";
-		cadena+="IVA: 21% \n";
-		cadena+="PVP: "+pvp+" € \n";		
-		cadena+="Stock: "+this.cuantosQuedan+"\n";
+		String cadena = "";
+		double pvp = (this.precio + (this.precio * Articulo.IVA));
+		;
+		cadena += "Artículo: " + this.nombre + "\n";
+		cadena += "Precio sin IVA: " + this.precio + " €\n";
+		cadena += "IVA: 21% \n";
+		cadena += "PVP: " + pvp + " € \n";
+		cadena += "Stock: " + this.cuantosQuedan + "\n";
 		return cadena;
 	}
+/**
+ *override método equals en base al nombre
+ */
+	@Override
+	public boolean equals(Object obj) {
+		boolean igual = false;
+		Articulo otroObjeto = (Articulo) obj;
+		if (this.nombre.equals(otroObjeto.nombre)) {
+			igual = true;
+		}
 
+		return igual;
+	}
 }

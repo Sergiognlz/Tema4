@@ -27,9 +27,17 @@ public class GESTISIMAL {
 	 *         false si no lo añadió
 	 */
 	public boolean añadirArticulo(Articulo objeto) {
-
-		// devolvemos true o false dependiendo de si ya se encuentra en el conjunto
-		return conjunto.add(objeto);
+		//variable exito
+			boolean exito=false;
+		//comprobamos que el objeto que queremos añadir no se encuentre ya en el conjunto
+		if(!conjunto.contains(objeto)) {	
+			//si no se encuentra se añade
+		 conjunto.add(objeto);
+		 //cambiamos exito a true
+		 exito=true;
+		}
+		 //devuelve exito
+		 return exito;
 	}
 
 	/**

@@ -66,9 +66,12 @@ public class Pizza {
 	 * 
 	 * @param estado pizza
 	 */
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setEstado(String estado) {
+		this.estado = Estado.valueOf(estado);
 	}
+
+		
+	
 
 	/**
 	 * get código
