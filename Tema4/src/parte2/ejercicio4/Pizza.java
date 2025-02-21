@@ -1,5 +1,7 @@
 package parte2.ejercicio4;
 
+import java.util.Objects;
+
 public class Pizza {
 
 	enum Tamaño {
@@ -127,5 +129,8 @@ public class Pizza {
 		}
 		return igual;
 	}
-
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigo);
+	}
 }

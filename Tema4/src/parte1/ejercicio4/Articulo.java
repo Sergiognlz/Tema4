@@ -1,5 +1,7 @@
 package parte1.ejercicio4;
 
+import java.util.Objects;
+
 /**
  * clase artículo
  */
@@ -164,6 +166,8 @@ public class Articulo {
 
 		return vendido;
 	}
+	
+	
 
 	/**
 	 * Método toString
@@ -181,9 +185,16 @@ public class Articulo {
 		cadena += "Stock: " + this.cuantosQuedan + "\n";
 		return cadena;
 	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+
+
 /**
- *override método equals en base al nombre
- */
+*override método equals en base al nombre
+*/
 	@Override
 	public boolean equals(Object obj) {
 		boolean igual = false;
@@ -194,4 +205,7 @@ public class Articulo {
 
 		return igual;
 	}
+	
+	
+	
 }

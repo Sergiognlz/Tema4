@@ -68,9 +68,7 @@ public class PrincipalPizza {
 				//llamamos a buscaPizza y le pasamos el código y guardamos el objeto que devuelve el objeto pizza
 				pizza=pC.buscaPizza(codigo);
 				//si la pizza existe
-				if(pizza!=null) {
-					//cambiamos estado
-				pizza.setEstado("SERVIDA");
+				if(pC.modificaEstado(codigo)) {
 				//mensaje de cambio
 				System.out.println("Se ha cambiado el estado a SERVIDA");
 				//en caso de que no exista
