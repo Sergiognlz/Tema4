@@ -1,5 +1,7 @@
 package parte4.ejercicio4;
 
+import java.util.Objects;
+
 public class Disco {
 	// creamos enumerado tipo género
 	enum Genero {
@@ -87,17 +89,43 @@ public double getDuracion() {
 public Genero getGenero() {
 	return genero;
 }
-	
+	/**
+	 * implementación del método toString
+	 * devuelve una cadena con los datos del objeto
+	 */
 @Override
 public String toString() {
 	String cadena="";
-	cadena="Codigo:"+this.codigo+"n/";
-	cadena="Autor:"+this.autor+"n/";
-	cadena="Título:"+this.titulo+"n/";
-	cadena="Duración:"+this.duracion+"n/";
-	cadena="Género:"+this.genero+"n/";
+	cadena+="Codigo:"+this.codigo+"\n";
+	cadena+="Autor:"+this.autor+"\n";
+	cadena+="Título:"+this.titulo+"\n";
+	cadena+="Duración:"+this.duracion+"mins.\n";
+	cadena+="Género:"+this.genero+"\n";
 	
 	return cadena;
+}
+/**
+ * implementación del equals en base al código
+ */
+@Override
+public boolean equals(Object obj) {
+	boolean igual=false;
+	
+	Disco objeto2=(Disco)obj;
+	
+	if(this.codigo==objeto2.codigo) {
+		igual=true;
+	}
+	
+	return igual;
+}
+/**
+ * implementación del hash en base al código
+ */
+@Override
+public int hashCode() {
+
+	return Objects.hash(codigo);
 }
 
 }
