@@ -1,5 +1,7 @@
 package parte2.ejercicio1;
 
+import java.util.Objects;
+
 /**
  * Clase cuenta corriente donde almacenaremos los datos que necesitamos
  */
@@ -14,7 +16,7 @@ public class CuentaCorriente {
 	private String DNI;
 
 	// atributo nombre completo del titular
-	private String nombre="";
+	private String nombre = "";
 
 	// atributo saldo de la cuenta
 	private double saldo;
@@ -23,7 +25,19 @@ public class CuentaCorriente {
 	private Nacionalidad nacion = Nacionalidad.ESPAÑOLA;
 
 	/**
+	 * constructor cuenta corriente
+	 * 
+	 * @param DNI del titular
+	 */
+	public CuentaCorriente(String DNI) {
+		if (DNI != null && !DNI.isBlank()) {
+			this.DNI = DNI;
+		}
+	}
+
+	/**
 	 * Constructor que recoje los siguientes atributos de la cuenta corriente:
+	 * 
 	 * 
 	 * @param DNI   del titular
 	 * @param saldo de la cuenta
@@ -71,12 +85,8 @@ public class CuentaCorriente {
 		this.saldo = saldo;
 
 		switch (nacion) {
-		case "ESPAÑOLA" -> {
-			this.nacion = Nacionalidad.ESPAÑOLA;
-		}
-		default -> {
-			this.nacion = Nacionalidad.EXTRANJERA;
-
+		case "ESPAÑOLA", "Extranjera" -> {
+			this.nacion = Nacionalidad.valueOf(nacion);
 		}
 		}
 
@@ -224,11 +234,17 @@ public class CuentaCorriente {
 		boolean iguales = false;
 		CuentaCorriente cc2 = (CuentaCorriente) obj;
 
-		if (this.DNI.equals(cc2.DNI) && this.nombre.equals(cc2.nombre)) {
+		if (this.DNI.equals(cc2.DNI)) {
 			iguales = true;
 		}
 
 		return iguales;
+	}
+
+	@Override
+	public int hashCode() {
+
+		return Objects.hash(DNI);
 	}
 
 }
