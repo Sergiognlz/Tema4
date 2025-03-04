@@ -1,8 +1,8 @@
-package parte4.ejercicio4;
+package parte4.ejercicio0;
 
 import java.util.Scanner;
 
-import parte4.ejercicio4.Disco.Genero;
+import parte4.ejercicio0.Disco.Genero;
 
 public class PrincipalDisco {
 //creamos Scanner a nivel de clase para usarlo donde lo necesitemos
@@ -53,38 +53,27 @@ public class PrincipalDisco {
 				codigo = pedirCodigo();
 				// llamamos al constructor pasandole solo el código
 				objeto = new Disco(codigo);
-				// volvemos a guardar en objeto esta vez el objeto que corresponde con el código
-				// del objeto que buscamos
-				objeto = DiscoCRUD.buscaDisco(objeto);
-				//comprobamos que lo encuentre
-				if(objeto!=null) {
-					//comprobamos si lo ha eliminado llamando a la función eliminaDisco
-					if(DiscoCRUD.eliminaDisco(objeto)) {
-						//si lo consigue eliminar
-						System.out.println("El disco ha sido eliminado con éxito");
-						//sino
-					}else {
-						//error
-						System.err.println("No ha podido eliminar el disco");
-					}
-					
-					//si no lo encuentra...
-				}else {
-					//es que no existe
-					System.out.println("El disco que intenta eliminar no existe");
-					
+
+				// comprobamos si lo ha eliminado llamando a la función eliminaDisco
+				if (DiscoCRUD.eliminaDisco(objeto)) {
+					// si lo consigue eliminar
+					System.out.println("El disco ha sido eliminado con éxito");
+					// sino
+				} else {
+					// error
+					System.err.println("No ha podido eliminar el disco");
 				}
 
 			}
-			//caso 4: saliendo
-			case 4->{
-				//mensaje salida
+			// caso 4: saliendo
+			case 4 -> {
+				// mensaje salida
 				System.out.println("Saliendo del programa");
 				System.out.println();
 			}
-			//default
-			default->{
-				//mensaje error opción
+			// default
+			default -> {
+				// mensaje error opción
 				System.err.println("La opción elegida no exite");
 			}
 			}
@@ -200,7 +189,7 @@ public class PrincipalDisco {
 		System.out.println("Introduce el género del disco");
 		// guardamos dato
 		genero = sc.nextLine().toUpperCase();
-	
+
 		// devuelve dato
 		return genero;
 	}
