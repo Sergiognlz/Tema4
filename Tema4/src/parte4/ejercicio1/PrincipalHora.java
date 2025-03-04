@@ -24,7 +24,9 @@ public class PrincipalHora {
 		
 		// do while para repetir el proceso hasta que elijamos salir
 		do {
+		
 		mostrarMenu();	
+		
 		opcion=pedirOpcion();
 		if(opcion==1) {
 			h.incrementaSegundo();
