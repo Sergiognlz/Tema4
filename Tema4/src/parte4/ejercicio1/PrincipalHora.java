@@ -45,7 +45,10 @@ public class PrincipalHora {
 
 		mostrarReloj();
 		System.out.println("Fin de programa");
+		//cerramos escaner
+		sc.close();
 	}
+	
 
 	/**
 	 * función pedir hora
