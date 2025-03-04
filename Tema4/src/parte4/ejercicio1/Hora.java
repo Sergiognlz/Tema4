@@ -113,7 +113,7 @@ public class Hora {
 	 */
 	@Override
 	public String toString() {
-		String cadena = hora + " horas, " + minuto + " minutos, " + segundo + " segundos";
+		String cadena =hora + ":" + minuto + ":" + segundo ;
 
 		return cadena;
 	}
