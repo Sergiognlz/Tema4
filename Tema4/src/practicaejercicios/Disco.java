@@ -131,7 +131,7 @@ public class Disco {
 		cadena += "Título: " + this.titulo + "\n";
 		cadena += "Autor: " + this.autor + "\n";
 		cadena += "Duración: " + this.duracion + " mins.";
-
+		
 		return cadena;
 	}
 
