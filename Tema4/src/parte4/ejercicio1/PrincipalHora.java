@@ -110,11 +110,27 @@ public class PrincipalHora {
 	 * @return objeto hora
 	 */
 	public static Hora creaHora() {
+		
+		boolean correcto=false;
+		Hora objeto=null;
+		
+		do {
+			try {
+				
 		int hora = pedirHora();
 		int minuto = pedirMinuto();
 		int segundo = pedirSegundo();
-		Hora objeto = new Hora(hora, minuto, segundo);
-
+		objeto = new Hora(hora, minuto, segundo);
+		
+		correcto=true;
+			}catch(NegativeSecondException e) {
+				System.out.println(e);
+			}catch(NegativeMinuteException e) {
+				System.out.println(e);
+			}catch(NegativeHourException e) {
+				System.out.println(e);
+			}
+		}while(!correcto);
 		// devolvemos objeto;
 		return objeto;
 	}
