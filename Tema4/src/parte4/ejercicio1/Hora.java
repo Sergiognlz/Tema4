@@ -16,15 +16,21 @@ public class Hora {
 	 * @param minutos
 	 * @param segundos
 	 */
-	public Hora(int hora, int minuto, int segundo) {
+	public Hora(int hora, int minuto, int segundo) throws NegativeSecondException, NegativeMinuteException, NegativeHourException {
 		if (hora <= 23 && hora > 0) {
 			this.hora = hora;
+		}else {
+			throw new NegativeHourException();
 		}
 		if (minuto < 60 && minuto >= 0) {
 			this.minuto = minuto;
+		}else {
+			throw new NegativeMinuteException();
 		}
 		if (segundo < 60 && segundo >= 0) {
 			this.segundo = segundo;
+		}else {
+			throw new NegativeSecondException();
 		}
 
 	}
@@ -43,9 +49,11 @@ public class Hora {
 	 * 
 	 * @param hora
 	 */
-	public void setHora(int hora) {
+	public void setHora(int hora) throws NegativeHourException {
 		if (hora <= 23 && hora > 0) {
 			this.hora = hora;
+		}else {
+			throw new NegativeHourException();
 		}
 	}
 
@@ -63,9 +71,11 @@ public class Hora {
 	 * 
 	 * @param minuto
 	 */
-	public void setMinuto(int minuto) {
+	public void setMinuto(int minuto) throws NegativeMinuteException {
 		if (minuto < 60 && minuto >= 0) {
 			this.minuto = minuto;
+		}else {
+			throw new NegativeMinuteException();
 		}
 	}
 
@@ -84,9 +94,11 @@ public class Hora {
 	 * 
 	 * @param segundo
 	 */
-	public void setSegundo(int segundo) {
+	public void setSegundo(int segundo) throws NegativeSecondException {
 		if (segundo < 60 && segundo >= 0) {
 			this.segundo = segundo;
+		}else {
+			throw new NegativeSecondException();
 		}
 	}
 
