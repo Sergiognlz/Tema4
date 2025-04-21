@@ -123,6 +123,7 @@ public class PrincipalHora {
 		objeto = new Hora(hora, minuto, segundo);
 		
 		correcto=true;
+		
 			}catch(NegativeSecondException e) {
 				System.out.println(e);
 			}catch(NegativeMinuteException e) {
